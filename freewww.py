@@ -41,7 +41,7 @@ def main():
 	rhtml = check()
 	state = re.findall(r'<vmstatus>(.*)</vmstatus>',rhtml)
 	if "running" in state:
-		print("MJJ is Running")
+		print("free-www is Running")
 	else:
 		restart()
 
