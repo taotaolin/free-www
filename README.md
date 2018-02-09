@@ -6,6 +6,10 @@
 
 后台运行可以使用nohup或者screen。
 
+# free-www 监控自动关机脚本
+
+采用ping减少面板压力
+
 # freeorder 监控KVM mini一键添加购物车脚本
 
 基于Python，兼容python2,3

@@ -97,7 +97,7 @@ def addCar():
 	r = s.post(url,data = playlod,verify=False)
 	time.sleep(1)
 	r = s.post(url,data = playlod2,verify=False)
-	print(r.text)
+	return r.text
 
 if __name__ == '__main__':
 	with requests.Session() as s:
@@ -113,5 +113,9 @@ if __name__ == '__main__':
 		Login()
 		while True:
 			if Find():
-				addCar()
+				result = addCar()
+				res = re.findall(r'formParam',result)
+				if 'formParam' in res:
+					print('Success addCar!')
+					break
 			time.sleep(5)
