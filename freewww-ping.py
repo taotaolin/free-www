@@ -44,8 +44,8 @@ def main():
 		print("Free-www is Running")
 	else: 
 		rhtml = check()
-		id_num = re.findall(r'<id>(\d+)</id>',test)
-		state = re.findall(r'<vmstatus>(.*)</vmstatus>',test)
+		id_num = re.findall(r'<id>(\d+)</id>',rhtml)
+		state = re.findall(r'<vmstatus>(.*)</vmstatus>',rhtml)
 		print(id_num,state)
 		if len(state) != 1:
 			print("检测到不止一台VPS")
