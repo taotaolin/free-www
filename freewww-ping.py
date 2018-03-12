@@ -39,19 +39,24 @@ def restart(url = keepurl):
 		print(e)	
 
 def main():
+	print("你所监控的机器ID为%s" %ID)
 	if(os.system('ping -c 5 -w 5 %s'%ip) == 0):
 		print("Free-www is Running")
 	else: 
 		rhtml = check()
-		id_num = re.findall(r'<id>(\d+)</id>',rhtml)
-		state = re.findall(r'<vmstatus>(.*)</vmstatus>',rhtml)
+		id_num = re.findall(r'<id>(\d+)</id>',test)
+		state = re.findall(r'<vmstatus>(.*)</vmstatus>',test)
+		print(id_num,state)
 		if len(state) != 1:
 			print("检测到不止一台VPS")
-		if "running" in state[id_num.index(ID)]:
-			print("Free-www is Running")
+		if ID in id_num:
+			if "running" in state[id_num.index(ID)]:
+				print("Free-www is Running")
+			else:
+				print("%s is not running"%ID)
+				restart()
 		else:
-			print("%s is not running"%ID)
-			restart()
+			print("没有找到对应ID")
 
 if __name__ == '__main__':
 	while True:
