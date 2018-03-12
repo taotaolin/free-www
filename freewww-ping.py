@@ -13,6 +13,7 @@ checkurl = 'http://kvm.free-www.ru:1500/vmmgr?out=xml&authinfo={0}:{1}&func={2}&
 keepurl = 'http://kvm.free-www.ru:1500/vmmgr?out=xml&authinfo={0}:{1}&func={2}&elid={3}'.format(username,password,restart,ID)
 list1 = [('ok', 'vm.restart')]
 
+
 def check(url = checkurl):
 	try:
 		s = requests.Session()
@@ -45,7 +46,7 @@ def main():
 	else: 
 		rhtml = check()
 		id_num = re.findall(r'<id>(\d+)</id>',rhtml)
-		state = re.findall(r'<vmstatus>(.*)</vmstatus>',rhtml)
+		state = re.findall(r'<vmstatus>(.*?)</vmstatus>',rhtml)
 		print(id_num,state)
 		if len(state) != 1:
 			print("检测到不止一台VPS")
