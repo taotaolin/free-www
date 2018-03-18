@@ -9,6 +9,7 @@ systems = 'linux'#linux  windows   win下若linux不能正常运行请选择wind
 
 def Login():
 	url = 'https://my.free-www.ru/'
+	playlod = {
 			'username':username,
 			'password':password,
 			'lang':'ru',
