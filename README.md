@@ -5,6 +5,8 @@
 free_new 新版监控，监控账户下所有小鸡，目前处于测试阶段
 基于Python，兼容python2,3。有问题尽力解决
 
+free_new 若出现ping多了一个u的情况建议用free_new2.py
+
 后台运行可以使用nohup或者screen。
 
 # 原有版本不建议使用。仅作为API参考。最好使用新版本简单
