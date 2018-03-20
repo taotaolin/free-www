@@ -70,7 +70,7 @@ def main():
 		time.sleep(1)
 		edgaJson(result_dic)
 		for x in range(len(result_dic)):
-			ip = ','.jion(result_dic[x][1])
+			ip = ','.join(result_dic[x][1])
 			if 'linux' in systems:
 				if(os.system('ping -c 5 -w 5 %s'%ip) == 0):
 					print("The %d Free-www is running!"%(x+1))
