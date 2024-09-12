@@ -21,7 +21,7 @@ cd cat-token-box
 yarn install
 yarn build
 
-cd cat-token-box/packages/tracker/
+cd /root/cat-token-box/packages/tracker/
 chmod 777 docker/data
 chmod 777 docker/pgdata
 docker-compose up -d
